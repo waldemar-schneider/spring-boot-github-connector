@@ -1,8 +1,10 @@
 extends ../layout
+
 block title
-  title issues of flyway
+  - title = 'issue list of ' + organisation + ' / ' + repository
+  title= title 
 block content
-  h1 issue list of flyway db
+  h1= title
   
   table
     thead

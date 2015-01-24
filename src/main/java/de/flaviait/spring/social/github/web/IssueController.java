@@ -20,6 +20,8 @@ public class IssueController {
     @RequestMapping("{organisation}/{repository}/issues")
     public String issues(Model model, @PathVariable String organisation, @PathVariable String repository) {
         List<Issue> issues = issueService.findIssues(organisation, repository);
+        model.addAttribute("organisation", organisation);
+        model.addAttribute("repository", repository);
         model.addAttribute("issues", issues);
         return "issues/issues";
     }
