@@ -1,0 +1,15 @@
+extends ../layout
+block title
+  title issues of flyway
+block content
+  h1 issue list of flyway db
+  
+  table
+    thead
+      tr
+        th Issue number
+        th Issue Title
+    for issue in issues
+      tr
+        td= issue.gitHubIssue.number
+        td= issue.gitHubIssue.title
